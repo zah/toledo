@@ -153,29 +153,18 @@ Use the [`toledo`](https://github.com/sigp/lighthouse/pull/1874) branch (until t
 
 ### Nimbus
 
-TODO: which git branch to run?
+Use the [`devel`](https://github.com/status-im/nimbus-eth2/tree/devel) branch.
 
-#### Beacon node
+#### Stand-alone beacon node
 
-Prepare a binary with insecure/experimental features enabled:
 ```shell script
-make -j8 LOG_LEVEL="TRACE" NIMFLAGS="-d:insecure" beacon_node
+make toledo
 ```
 
-Requires a special json config file.
-```
-  --network="nimbus_config.json"
-```
+#### Beacon node with a validator client attached
 
-Config file looks like [`nimbus_config.json`](./nimbus_config.json)
-
-#### Validator
-
-No configuration necessary, fork version etc. are loaded from the beacon node.
-
-Prepare a binary with insecure/experimental features enabled:
 ```shell script
-make -j8 LOG_LEVEL="TRACE" NIMFLAGS="-d:insecure" validator_client
+make toledo-vc
 ```
 
 ## Q & A
@@ -196,4 +185,3 @@ Time to get clients ready for v1.0.0! Starting relatively small, and then bigger
 Yes, Toledo is also a city and municipality in Spain.
 This is another Toledo: [Toledo Via in Naples, Italy](https://en.wikipedia.org/wiki/Via_Toledo) and [its metro station](https://en.wikipedia.org/wiki/Toledo_(Naples_Metro)) filled with art.
  
-
